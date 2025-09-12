@@ -1,0 +1,5 @@
+removeErroringBlockEntities = false
+removeErroringEntities = false
+fullBoundingBoxLadders = false
+permissionHandler = "neoforge:default_handler"
+advertiseDedicatedServerToLan = true

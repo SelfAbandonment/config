@@ -1,0 +1,43 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "2652D11A1E5395AE"
+	group: "08701E4938C3D337"
+	icon: {
+		components: {
+			"geckolib:stack_animatable_id": 11L
+			"pointblank:custom_tag": {
+				aim: 0b
+				ammo: 17
+				ammox: { }
+				fmid: [I;
+					1408449219
+					-902153497
+					-1654582519
+					-958024607
+				]
+				lid: -7707602195450597409L
+				mid: -979977112998490506L
+				sa: {
+					scope: "/"
+				}
+				seed: 5110066132600572731L
+			}
+			"pointblank:ts": 1754991473760L
+		}
+		id: "pointblank:glock17"
+	}
+	id: "2652D11A1E5395AE"
+	order_index: 4
+	quest_links: [ ]
+	quests: [{
+		id: "7DEE86BAC9F63771"
+		tasks: [{
+			id: "6D91E5D6A8C97234"
+			item: { count: 1, id: "pointblank:printer" }
+			type: "item"
+		}]
+		x: 0.0d
+		y: 0.0d
+	}]
+}

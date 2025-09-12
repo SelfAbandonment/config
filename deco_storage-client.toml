@@ -1,0 +1,2 @@
+#Whether the welcome message has been shown
+shownWelcomeMessage = true

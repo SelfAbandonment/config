@@ -1,0 +1,86 @@
+{
+	default_hide_dependency_lines: false
+	default_quest_shape: ""
+	filename: "7D57DA8C4EAEB1B1"
+	group: "08701E4938C3D337"
+	icon: {
+		components: {
+			"automobility:frame": "automobility:bejeweled_motorcar"
+		}
+		id: "automobility:automobile_frame"
+	}
+	id: "7D57DA8C4EAEB1B1"
+	order_index: 3
+	quest_links: [ ]
+	quests: [
+		{
+			id: "4BDF843A407FAB45"
+			tasks: [{
+				id: "64A574EC333F30A7"
+				item: { count: 1, id: "automobility:auto_mechanic_table" }
+				type: "item"
+			}]
+			x: 0.0d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4BDF843A407FAB45"]
+			id: "7E3D18F4DFA46819"
+			tasks: [{
+				id: "345B366BC931A26B"
+				item: { components: { "automobility:frame": "automobility:bejeweled_motorcar" }, count: 1, id: "automobility:automobile_frame" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: -1.5d
+		}
+		{
+			dependencies: ["4BDF843A407FAB45"]
+			id: "6D0862B957AAE53F"
+			tasks: [{
+				id: "08CCF75CFCF794B3"
+				item: { components: { "automobility:engine": "automobility:diamond" }, count: 1, id: "automobility:automobile_engine" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: -3.0d
+		}
+		{
+			dependencies: ["4BDF843A407FAB45"]
+			id: "1C13E7C22B197C8E"
+			tasks: [{
+				count: 5L
+				id: "41DA9FC50B05B18D"
+				item: { components: { "automobility:wheel": "automobility:bejeweled" }, count: 5, id: "automobility:automobile_wheel" }
+				type: "item"
+			}]
+			x: 2.5d
+			y: 0.0d
+		}
+		{
+			id: "6F92148B6E04D976"
+			tasks: [{
+				id: "711C6E5133118C9C"
+				item: { count: 1, id: "automobility:automobile_assembler" }
+				type: "item"
+			}]
+			x: 9.5d
+			y: -1.5d
+		}
+		{
+			dependencies: [
+				"7E3D18F4DFA46819"
+				"6D0862B957AAE53F"
+				"1C13E7C22B197C8E"
+				"6F92148B6E04D976"
+			]
+			id: "34D7D5206752F4D4"
+			tasks: [{
+				id: "076DE41151FB0AD7"
+				type: "checkmark"
+			}]
+			x: 5.5d
+			y: -1.5d
+		}
+	]
+}

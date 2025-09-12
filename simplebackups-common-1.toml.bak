@@ -1,0 +1,72 @@
+# 备份核心设置
+# 启用备份功能
+enabled = true
+
+# 备份类型：混合策略（增量+定期全量）
+# 日常使用增量备份（仅保存变更文件），每周做一次全量备份
+backupType = "MODIFIED_SINCE_FULL"
+
+# 全量备份间隔（单位：分钟），7天=10080分钟
+# 平衡备份完整性和存储占用，避免全量备份过于频繁
+fullBackupTimer = 10080
+
+# 保留备份数量：14个（2周）
+# 兼顾数据安全和存储空间，旧备份自动清理
+backupsToKeep = 14
+
+# 备份间隔：6小时（360分钟）
+# 减少高频备份对服务器性能的影响，适合非极高频率更新的服务器
+timer = 360
+
+# 压缩等级：3（平衡压缩率和CPU占用）
+# 比默认值略低，降低备份时的服务器卡顿风险
+compressionLevel = 3
+
+# 备份时发送通知（保留，便于监控）
+sendMessages = true
+
+# 最大备份存储容量：50 GB
+# 适当提高容量，容纳2周的混合备份（含全量+增量）
+maxDiskSize = "50 GB"
+
+# 备份文件输出路径（保留原路径）
+outputPath = "simplebackups"
+
+# 无人在线时不创建备份（节省资源）
+# 非活跃时段无需频繁备份
+noPlayerBackups = true
+
+# 为每个世界创建子目录（保留，便于管理多世界）
+createSubDirs = true
+
+# 不使用内部tick计数器（避免因服务器卡顿导致备份间隔不准）
+useTickCounter = false
+
+# 备份前强制保存所有数据（保留，确保备份完整性）
+saveAll = true
+
+[mod_compat]
+	# 启用Discord备份通知（保留，便于远程监控）
+	mc2discord = true
+
+# 备份忽略列表（优化排除项）
+[to_ignore]
+	# 忽略的目录（新增临时文件和日志目录）
+	ignored_paths = [
+		"DIM1",           # 末地（如需备份可移除）
+		"DIM-1",          # 地狱（如需备份可移除）
+		"logs",           # 日志文件（无需备份）
+		"cache",          # 缓存目录（临时文件）
+		"crash-reports"   # 崩溃报告（可单独保存）
+	]
+	
+	# 忽略的文件（保留原设置并补充）
+	ignored_files = [
+		"data/DistantHorizons.sqlite", 
+		"data/DistantHorizons.sqlite-wal",
+		"session.lock",   # 会话锁文件（临时文件）
+		"level.dat_old"   # 旧level文件（冗余）
+	]
+	
+	# 正则表达式排除（新增临时文件和备份文件）
+	ignored_files_regex = ".*\\.tmp$|.*\\.bak$|.*~$"  # 排除临时文件、备份文件和编辑器临时文件

@@ -1,0 +1,8 @@
+target = "aHR0cHM6Ly9iYnNtYy5uZXQvc2VydmVyP2FmZj1zb25nXzUwMDc="
+Default: 10
+# Range: 0 ~ 100
+overworld_mob_cap = 10
+# Default: 90
+# Range: 10 ~ 100
+end_mob_cap = 90
+disallow_maid_change_model = true
