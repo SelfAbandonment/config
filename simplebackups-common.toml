@@ -5,7 +5,7 @@ enabled = true
 #- MODIFIED_SINCE_LAST - only saves the files which changed since last (partial) backup
 #- MODIFIED_SINCE_FULL - saves all files which changed after the last full backup
 #Allowed Values: FULL_BACKUPS, MODIFIED_SINCE_LAST, MODIFIED_SINCE_FULL
-backupType = "MODIFIED_SINCE_FULL"
+backupType = "MODIFIED_SINCE_LAST"
 #How often should a full backup be created if only modified files should be saved? This creates a full backup when x minutes are over and the next backup needs to be done. Once a year is default.
 # Default: 525960
 # Range: 1 ~ 5259600
@@ -20,14 +20,14 @@ backupsToKeep = 3
 #1440 = each day
 # Default: 120
 # Range: 1 ~ 32767
-timer = 360
+timer = 240
 #Compression level:
 #  0  = no compression (low CPU usage, larger files)
 #  9  = maximum compression (high CPU usage, smaller files)
 #  -1 = default; balances speed and compression (recommended)
 # Default: -1
 # Range: -1 ~ 9
-compressionLevel = 3
+compressionLevel = -1
 #Should message be sent when backup is in the making?
 sendMessages = true
 #The max size of storage the backup folder. If it takes more storage, old files will be deleted.
@@ -37,7 +37,7 @@ maxDiskSize = "50 GB"
 #Used to define the output path.
 outputPath = "simplebackups"
 #Create backups, even if nobody is online
-noPlayerBackups = true
+noPlayerBackups = false
 #Should sub-directories be generated for each world?
 #Keep in mind that all configs above, including backupsToKeep and maxDiskSize, will be calculated for each sub directory.
 createSubDirs = true
@@ -57,13 +57,13 @@ saveAll = true
 	#All directories that should be excluded from backups
 	#Format: Enter paths relative to the world directory (e.g., 'logs', 'data/cache')
 	#All files within these directories will also be excluded
-	ignored_paths = ["DIM1", "DIM-1", "logs", "cache", "crash-reports"]
+	ignored_paths = ["DIM1"]
 	#Specific files that should be excluded from backups
 	#Format: Enter complete file paths relative to the world directory (e.g., 'level.dat_old', 'stats/player.json')
 	#Use this for individual files rather than entire directories
-	ignored_files = ["data/DistantHorizons.sqlite", "data/DistantHorizons.sqlite-wal", "session.lock", "level.dat_old"]
+	ignored_files = ["data/DistantHorizons.sqlite", "data/DistantHorizons.sqlite-wal"]
 	#Regular expression pattern to exclude matching files from backups
 	#All files with paths matching this pattern will be skipped
 	#Example: '.*\.temp$' excludes all files ending with .temp
 	#Leave empty to disable regex-based file exclusion
-	ignored_files_regex = ".*\\.tmp$|.*\\.bak$|.*~$"
+	ignored_files_regex = ""

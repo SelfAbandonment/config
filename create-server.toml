@@ -73,7 +73,7 @@
 	#Maximum length in blocks of chain conveyor connections.
 	# Default: 32
 	# Range: > 5
-	maxChainConveyorLength = 32
+	maxChainConveyorLength = 1024
 	#.
 	#Maximum amount of connections each chain conveyor can have.
 	# Default: 4
@@ -374,11 +374,11 @@
 	hosePulleyBlockThreshold = 10000
 	#.
 	#Whether hose pulleys should continue filling up above-threshold sources.
-	fillInfinite = true
+	fillInfinite = false
 	#.
 	#Configure which fluids can be drained infinitely.
 	#Allowed Values: ALLOW_ALL, DENY_ALL, ALLOW_BY_TAG, DENY_BY_TAG
-	bottomlessFluidMode = "ALLOW_ALL"
+	bottomlessFluidMode = "ALLOW_BY_TAG"
 	#.
 	#Whether hose pulleys should be allowed to place fluid sources.
 	fluidFillPlaceFluidSourceBlocks = true
