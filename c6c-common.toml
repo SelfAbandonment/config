@@ -5,4 +5,5 @@ overworld_mob_cap = 10
 # Default: 90
 # Range: 10 ~ 100
 end_mob_cap = 90
-disallow_maid_change_model = true
+disallow_maid_change_model = false
+allow_double_jump = true
